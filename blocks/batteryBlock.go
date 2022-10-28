@@ -57,7 +57,7 @@ func (this BatteryBlock) Tick() {
 		}
 		// Deal with the contents
 		cap, err := strconv.Atoi(strings.TrimSpace(string(rawCapacity)))
-		power, err := strconv.ParseFloat(strings.TrimSpace(string(rawPower)))
+		power, err := strconv.ParseFloat(strings.TrimSpace(string(rawPower)), 32)
 		pwr := power / 1000000
 
 		if err != nil {
