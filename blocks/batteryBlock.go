@@ -69,9 +69,9 @@ func (this BatteryBlock) Tick() {
 			this.block.Color = ""
 		}
 		if this.block.FullText == "" {
-			this.block.FullText = fmt.Sprintf("%d% %6.2f W", cap, pwr)
+			this.block.FullText = fmt.Sprintf("%d%% %6.2f W", cap, pwr)
 		} else {
-			this.block.FullText += fmt.Sprintf("%d% %6.2f W", cap, pwr)
+			this.block.FullText += fmt.Sprintf("%d%% %6.2f W", cap, pwr)
 		}
 	}
 
