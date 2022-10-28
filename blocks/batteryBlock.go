@@ -2,11 +2,12 @@ package blocks
 
 import (
 	"fmt"
-	"github.com/astrocbxy/statusbar"
 	"io/ioutil"
 	"os"
 	"strconv"
 	"strings"
+
+	"github.com/astrocbxy/statusbar"
 )
 
 type BatteryBlock struct {
@@ -56,8 +57,8 @@ func (this BatteryBlock) Tick() {
 		}
 		// Deal with the contents
 		cap, err := strconv.Atoi(strings.TrimSpace(string(rawCapacity)))
-		power, err := strconv.Atoi(strings.TrimSpace(string(rawPower)))
-		pwr := power/1000000
+		power, err := strconv.ParseFloat(strings.TrimSpace(string(rawPower)))
+		pwr := power / 1000000
 
 		if err != nil {
 			continue
@@ -68,9 +69,9 @@ func (this BatteryBlock) Tick() {
 			this.block.Color = ""
 		}
 		if this.block.FullText == "" {
-			this.block.FullText = fmt.Sprintf("%d%%d%W%", cap, pwr)
+			this.block.FullText = fmt.Sprintf("%d%%6.2fW%", cap, pwr)
 		} else {
-			this.block.FullText += fmt.Sprintf(" %d%%d%W%", cap, pwr)
+			this.block.FullText += fmt.Sprintf("%d%%6.2fW%", cap, pwr)
 		}
 	}
 
