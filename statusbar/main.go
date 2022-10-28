@@ -4,7 +4,7 @@ import (
 	"bufio"
 	"encoding/json"
 	"fmt"
-	"github.com/SlothOfAnarchy/statusbar"
+	"github.com/astrocbxy/statusbar"
 	"github.com/astrocbxy/statusbar/blocks"
 	"os"
 	"strings"

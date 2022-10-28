@@ -1,7 +1,7 @@
 package blocks
 
 import (
-	"github.com/SlothOfAnarchy/statusbar"
+	"github.com/astrocbxy/statusbar"
 	"io/ioutil"
 	"os"
 	"strconv"

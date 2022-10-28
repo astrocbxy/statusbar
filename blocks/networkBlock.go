@@ -3,7 +3,7 @@ package blocks
 import (
 	"bufio"
 	"fmt"
-	"github.com/SlothOfAnarchy/statusbar"
+	"github.com/astrocbxy/statusbar"
 	"os"
 	"strings"
 )
