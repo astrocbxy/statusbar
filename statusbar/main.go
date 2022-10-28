@@ -5,7 +5,7 @@ import (
 	"encoding/json"
 	"fmt"
 	"github.com/SlothOfAnarchy/statusbar"
-	"github.com/SlothOfAnarchy/statusbar/blocks"
+	"github.com/astrocbxy/statusbar/blocks"
 	"os"
 	"strings"
 	"time"

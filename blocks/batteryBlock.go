@@ -50,11 +50,13 @@ func (this BatteryBlock) Tick() {
 		}
 		// Read file
 		rawCapacity, err := ioutil.ReadFile("/sys/class/power_supply/" + supply.Name() + "/capacity")
+		rawPower, err := ioutil.ReadFile("/sys/class/power_supply/" + supply.Name() + "/power_now")
 		if err != nil {
 			continue
 		}
 		// Deal with the contents
 		cap, err := strconv.Atoi(strings.TrimSpace(string(rawCapacity)))
+		pwr, err := strconv.Atoi(strings.TrimSpace(string(rawPower)))/1000000
 		if err != nil {
 			continue
 		}
@@ -64,9 +66,9 @@ func (this BatteryBlock) Tick() {
 			this.block.Color = ""
 		}
 		if this.block.FullText == "" {
-			this.block.FullText = fmt.Sprintf("%d%%", cap)
+			this.block.FullText = fmt.Sprintf("%d%%d%W%", cap, pwr)
 		} else {
-			this.block.FullText += fmt.Sprintf(" %d%%", cap)
+			this.block.FullText += fmt.Sprintf(" %d%%d%W%", cap, pwr)
 		}
 	}
 
