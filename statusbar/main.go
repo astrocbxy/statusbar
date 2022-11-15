@@ -4,11 +4,12 @@ import (
 	"bufio"
 	"encoding/json"
 	"fmt"
-	"github.com/astrocbxy/statusbar"
-	"github.com/astrocbxy/statusbar/blocks"
 	"os"
 	"strings"
 	"time"
+
+	"github.com/astrocbxy/statusbar"
+	"github.com/astrocbxy/statusbar/blocks"
 )
 
 func main() {
@@ -28,10 +29,7 @@ func main() {
 	resp.AppendBlock(&blocks.MemoryBlock{})
 	resp.AppendBlock(&blocks.DiskBlock{})
 	resp.AppendBlock(&blocks.BatteryBlock{})
-	resp.AppendBlock(&blocks.NotmuchBlock{})
-	resp.AppendBlock(&blocks.NetworkBlock{})
 	resp.AppendBlock(&blocks.IpBlock{})
-	resp.AppendBlock(&blocks.SsidBlock{})
 	resp.AppendBlock(&blocks.LoadBlock{})
 	resp.AppendBlock(&blocks.TempBlock{})
 	resp.AppendBlock(&blocks.DateBlock{})
